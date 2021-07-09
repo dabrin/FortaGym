@@ -1,17 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header  [translucent]="true">
+  <ion-toolbar color="tertiary">
     <ion-title>
-      Tab 1
+      Seleccionar el día de entreno
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card *ngFor="let item of arrDiasHorarios" (click)="diaSeleccionado(item.dia)">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+      <ion-item>
+        {{item.dia}}
+      </ion-item>
+
+  </ion-card>
 </ion-content>

@@ -1,9 +1,20 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>listaHorarios</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-title>Lista de Horarios de {{dia}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-list>
+      <ion-item *ngFor="let item of arr" (click)="show(item.id)">
+        {{item.hora}}
+        <ion-badge color="danger" slot="end">10</ion-badge>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 
 </ion-content>
+<ion-button expand="full" color="danger" (click)="dismiss()">
+  Cerrar
+</ion-button>

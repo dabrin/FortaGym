@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-lista-horarios',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaHorariosPage implements OnInit {
 
-  constructor() { }
+  @Input()arr;
+  @Input()dia;
+
+
+  constructor(private modal:ModalController) { }
 
   ngOnInit() {
+
   }
 
+  dismiss(){
+    this.modal.dismiss()
+  }
+  show(val){
+    console.log(val)
+  }
 }

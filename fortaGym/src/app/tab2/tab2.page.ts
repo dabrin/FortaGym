@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
+
+  nombre="Dabrin Nájera"
+  edad=24;
+  peso=73;
+  correo="dabrinltecr@gmail.com"
   constructor() {}
+
 
 }
