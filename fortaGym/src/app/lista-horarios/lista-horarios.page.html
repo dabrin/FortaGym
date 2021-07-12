@@ -9,7 +9,7 @@
     <ion-list>
       <ion-item *ngFor="let item of arr" (click)="show(item.id)">
         {{item.hora}}
-        <ion-badge color="danger" slot="end">10</ion-badge>
+        <ion-badge color="danger" slot="end">{{item.espacio}}</ion-badge>
       </ion-item>
     </ion-list>
   </ion-card>

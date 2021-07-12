@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { HorariosService } from '../services/horarios.service';
 
 @Component({
   selector: 'app-lista-horarios',
@@ -12,7 +13,7 @@ export class ListaHorariosPage implements OnInit {
   @Input()dia;
 
 
-  constructor(private modal:ModalController) { }
+  constructor(private modal:ModalController, private horario:HorariosService) { }
 
   ngOnInit() {
 
@@ -23,5 +24,6 @@ export class ListaHorariosPage implements OnInit {
   }
   show(val){
     console.log(val)
+    this.horario.reservar('1',val)
   }
 }

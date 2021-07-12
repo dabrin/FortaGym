@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { Observable } from 'rxjs';
 import { ListaHorariosPage } from '../lista-horarios/lista-horarios.page';
+import {HorariosService} from '../services/horarios.service';
+import {Semana} from '../Model/Semana';
 
 @Component({
   selector: 'app-tab1',
@@ -9,7 +12,7 @@ import { ListaHorariosPage } from '../lista-horarios/lista-horarios.page';
 })
 export class Tab1Page {
 
-  arrDiasHorarios=[
+  /*arrDiasHorarios=[
     {
       'dia':"Lunes",
       'horario':
@@ -161,13 +164,16 @@ export class Tab1Page {
   ]
 
 
-
-  constructor(private modal:ModalController) {}
+*/
+  arrDiasHorarios=[];
+  constructor(private modal:ModalController , private horario:HorariosService) {}
 
 
   diaSeleccionado(val){
-    let arr=this.arrDiasHorarios.filter(item=>item.dia==val)
-    let arregloDeHorario=arr[0].horario;
+    let arrDiasHorarios=this.arrDiasHorarios;
+    //console.log(arrDiasHorarios);
+    let arr=arrDiasHorarios.filter(item=>item.dia==val)
+    let arregloDeHorario=arr[0].horarios;
     console.log(arregloDeHorario);
     this.mostrarModal(val,arregloDeHorario)
   }
@@ -184,4 +190,15 @@ export class Tab1Page {
     await modal.present();
 
   }
+
+  loadData(){
+    this.horario.getAllHorarios().subscribe((data:any)=>{
+      this.arrDiasHorarios=data;
+    })
+  }
+
+  ngOnInit() {
+    this.loadData();
+  }
+
 }
