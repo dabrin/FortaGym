@@ -13,16 +13,20 @@ export class Tab2Page {
   grasa;
   peso;
   estatura="";
+  cedula="";
+  masa;
   constructor(private usuario:UsuarioService) {}
 
   ngOnInit(){
-
-    this.usuario.getUsuario("1").subscribe(data=>{
+    let id=localStorage.getItem("userID")
+    this.usuario.getUsuario(id).subscribe(data=>{
       console.log(data)
       this.nombre=data.nombre+" "+ data.apellidos;
       this.peso=data.peso;
       this.estatura=data.altura +"mts";
       this.grasa=data.grasa+ "%";
+      this.cedula=data.cedula;
+      this.masa=data.masaMuscular;
     })
   }
 

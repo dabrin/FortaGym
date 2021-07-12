@@ -5,9 +5,10 @@
 </ion-header>
 
 <ion-content>
+
   <ion-card>
     <ion-list>
-      <ion-item *ngFor="let item of arr" (click)="show(item.id)">
+      <ion-item *ngFor="let item of arr" (click)="alert(item.id,item.hora)">
         {{item.hora}}
         <ion-badge color="danger" slot="end">{{item.espacio}}</ion-badge>
       </ion-item>

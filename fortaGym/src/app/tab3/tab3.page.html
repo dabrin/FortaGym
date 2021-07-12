@@ -1,12 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="tertiary">
     <ion-title>
-      Tab 3
+      Ver mis citas de la semana
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let item of arrCitas" >
 
+      <ion-item>
+        {{item.id}}
+      </ion-item>
+
+  </ion-card>
 
 </ion-content>
