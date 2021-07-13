@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioService } from '../services/usuario.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class Tab2Page {
   estatura="";
   cedula="";
   masa;
-  constructor(private usuario:UsuarioService) {}
+  constructor(private usuario:UsuarioService, private route:Router) {}
 
   ngOnInit(){
     let id=localStorage.getItem("userID")
@@ -28,6 +29,15 @@ export class Tab2Page {
       this.cedula=data.cedula;
       this.masa=data.masaMuscular;
     })
+  }
+
+  logout(){
+    localStorage.removeItem("userName")
+    localStorage.removeItem("userID")
+    localStorage.removeItem("admin")
+    this.route.navigate(['']);
+    this.route.navigate(['login'])
+    console.log("Salir");
   }
 
 }

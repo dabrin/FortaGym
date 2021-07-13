@@ -23,6 +23,7 @@ export class ListaHorariosPage implements OnInit {
 
   async alert(id:string,hora:string) {
     console.log(this.userId)
+    console.log(id)
     const alert = await this.alerCtrl.create({
      cssClass: 'my-custom-class',
      header: 'Atención',
@@ -38,8 +39,9 @@ export class ListaHorariosPage implements OnInit {
        }, {
          text: 'Aceptar',
          handler: () => {
-           this.horario.reservar(this.userId,id);
-           location.reload();
+            this.horario.reservar(this.userId,id);
+            this.sleep(300)
+            location.reload();
        }
       }
      ]
@@ -56,6 +58,11 @@ export class ListaHorariosPage implements OnInit {
   show(val){
     console.log(val)
     this.horario.reservar('1',val)
+  }
+
+  sleep(ms) {
+    return new Promise(
+      resolve => setTimeout(resolve, ms));
   }
 
 

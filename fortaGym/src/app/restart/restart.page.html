@@ -1,0 +1,28 @@
+<ion-header  [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Reiniciar citas
+    </ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button fill="outline"  (click)=logout()>
+        <ion-icon slot="start" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-label>
+      Si desea reiniciar los espacios de las citas, para la nueva semana, puede seleccionar el boton siguiente.
+      Es importante recordar que si decide reiniciar las citas, debe estar seguro de que ya concluyó con todos las reservas, para evitar problemas con los clientes.
+    </ion-label>
+
+
+  </ion-card>
+
+  <ion-button expand="full" color="danger" (click)=restart()>
+    Reiniciar
+  </ion-button>
+</ion-content>

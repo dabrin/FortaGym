@@ -3,6 +3,12 @@
     <ion-title>
       Datos del usuario
     </ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button fill="outline"  (click)=logout()>
+        <ion-icon slot="start" name="log-out"></ion-icon>
+
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -10,7 +16,7 @@
 
   <ion-card>
     <ion-item-group class="ion-activated">
-      <ion-item-divider>
+      <ion-item-divider color="secondary">
         <ion-icon name="person-outline" slot="start"></ion-icon>
         <ion-label>Datos personales</ion-label >
 
@@ -25,7 +31,7 @@
     </ion-item-group>
 
     <ion-item-group class="ion-activated">
-      <ion-item-divider>
+      <ion-item-divider color="secondary">
         <ion-icon name="accessibility-outline" slot="start">
         </ion-icon>
         <ion-label>Datos del Físico</ion-label>

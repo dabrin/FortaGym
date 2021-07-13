@@ -27,4 +27,11 @@ login(cedula:string,contraseña:string):Observable<any>{
   const formData=JSON.stringify(jsonData);
   return this.http.post(path,formData,{'headers':headers,'params':params})
 }
+
+restart(){
+  const path='https://fortagym.herokuapp.com/api/cita/reiniciar';
+
+  return this.http.get(path);
+
+}
 }

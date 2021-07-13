@@ -20,8 +20,14 @@ export class LoginPage implements OnInit {
       console.log(data)
        localStorage.setItem('userName',data.nombre);
        localStorage.setItem('userID',data.usuarioId);
-       //location.reload();
+       if(data.nombre=="Maikel"){
+         localStorage.setItem('admin',"1");
+         //window['admin']='1';
+         //location.reload()
+       }
        this.router.navigate([''])
+       //location.reload();
+
        },(err)=>{
 
         console.log(err,"MENSAJE")
@@ -48,6 +54,10 @@ export class LoginPage implements OnInit {
    });
 
    await alert.present();
+ }
+
+ registrar(){
+   this.router.navigate(['registro-usuarios'])
  }
 
 }

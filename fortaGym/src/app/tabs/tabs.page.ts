@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-
-  constructor() {}
+  admin=localStorage.getItem("admin");
+  constructor() {
+    console.log(window['admin'])
+    //this.admin=window['admin']
+  }
 
 }

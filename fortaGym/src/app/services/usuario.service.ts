@@ -14,6 +14,11 @@ export class UsuarioService {
   getUsuario(id:string):Observable<any>{
     return this.http.get(`https://fortagym.herokuapp.com/api/usuario/get/${id}`)
   }
+
+  getCitas(id:string):Observable<any>{
+    const path=`https://fortagym.herokuapp.com/api/cita/citasUsuario/${id}`
+    return this.http.get(path)
+  }
   postUsuario(user:Usuario):Observable<any>{
     const path='https://fortagym.herokuapp.com/api/usuario/insert'
 
@@ -32,7 +37,7 @@ export class UsuarioService {
     .set('masaMuscular',user.masaMuscular);
     const body = JSON.stringify(jsonData);
     const formData=JSON.stringify(jsonData);
-    return this.http.post(path,formData,{'headers':headers,'params':params})
+    return this.http.post(path,formData,{'headers':headers})
 
   }
 }

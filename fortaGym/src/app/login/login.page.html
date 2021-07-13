@@ -1,8 +1,9 @@
-<ion-header  [translucent]="true">
+<ion-header  [translucent]="false">
   <ion-toolbar color="tertiary">
     <ion-title>
       Inicio de sesión
     </ion-title>
+
   </ion-toolbar>
 </ion-header>
 
@@ -42,6 +43,12 @@
         INICIAR
         <ion-icon name="log-in-outline"></ion-icon>
         </ion-button>
+        <ion-item>
+          <ion-label (click)="registrar()" class="ion-text-center">
+            Registrarme
+          </ion-label>
+        </ion-item>
+
 
 
     </ion-card-content>

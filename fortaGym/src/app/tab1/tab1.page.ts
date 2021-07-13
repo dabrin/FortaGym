@@ -78,7 +78,14 @@ export class Tab1Page {
     this.horario.getAllHorarios().subscribe((data: any) => {
       this.arrDiasHorarios= data;
       });
-
   }
 
+  logout(){
+    localStorage.removeItem("userName")
+    localStorage.removeItem("userID")
+    localStorage.removeItem("admin")
+    this.router.navigate(['']);
+    this.router.navigate(['login'])
+    console.log("Salir");
+  }
 }

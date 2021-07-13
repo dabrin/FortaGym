@@ -1,8 +1,14 @@
 <ion-header  [translucent]="true">
   <ion-toolbar color="tertiary">
     <ion-title>
-      Seleccionar el día de entreno
+      Seleccionar el día
     </ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button fill="outline"  (click)=logout()>
+        <ion-icon slot="start" name="log-out"></ion-icon>
+
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -10,11 +16,17 @@
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <ion-card *ngFor="let item of arrDiasHorarios" (click)="diaSeleccionado(item.dia)">
-
-      <ion-item>
+  <ion-card *ngFor="let item of arrDiasHorarios"  >
+    <ion-item-group >
+      <ion-item >
         {{item.dia}}
       </ion-item>
+      <ion-item button color="secondary" (click)="diaSeleccionado(item.dia)">
+        Ver Disponibilidad
+        <ion-icon slot="end" name="eye"></ion-icon>
+      </ion-item>
+    </ion-item-group>
+
 
   </ion-card>
 </ion-content>

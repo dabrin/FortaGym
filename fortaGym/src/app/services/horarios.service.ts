@@ -20,6 +20,13 @@ export class HorariosService {
     return this.http.get(path);
   }
 
+  cancelar(id:string):Observable<any>{
+    const path=`https://fortagym.herokuapp.com/api/cita/cancelar/${id}`
+    return this.http.delete(path)
+  }
+
+
+
   reservar(val1:string,val2:string){
     const path='https://fortagym.herokuapp.com/api/cita/insert'
 
